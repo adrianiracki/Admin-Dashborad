@@ -36,15 +36,8 @@ body {
     display: flex;
 }
 
-.sidebar a:active {
+.sidebar a:hover {
     background-color: rgba(0, 0, 0, 0.3);
-}
-
-.sidebar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
 }
 
 .logo {
@@ -95,12 +88,129 @@ nav svg {
     align-items: center;
 }
 
-.header {
+.header-background {
     grid-column: 1 / 3;
     grid-row: 1;
     background-color: #ecfccb;
     z-index: -1;
 }
+
+.header {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    background: none;
+    display: grid;
+    grid-template-columns: clamp(300px, 70%, 800px) auto;
+    grid-template-rows: 1fr 1.3fr;
+}
+
+.search-bar {
+    padding: 20px 40px;
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+  }
+
+input[type="search"] {
+    appearance: none;
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    height: 1rem;
+    padding: 1rem;
+    background: lightgrey;
+}
+input[type="search"]:focus {
+    outline: none;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+    background-color: white;
+}
+
+.search-bar svg {
+    width: 1.5rem;
+    margin-right: 1rem;
+}
+
+.user-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding:0 40px;
+    width: max-content;
+    justify-self: end;
+}
+
+.user-bar svg {
+    width: 1.5rem;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(images/avatar.jpeg);
+    background-size: cover;
+}
+
+.user-welcome {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 80px auto;
+    grid-template-rows: 1fr 1.4fr;
+    padding-left: 40px;
+    align-content: start;
+}
+
+.user-welcome p {
+    margin: 0.2rem;
+    font-weight: 600;
+
+}
+
+.user-welcome .welcome {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+}
+
+.user-welcome .user-name {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+}
+
+
+.user-welcome .avatar {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    justify-self: start;
+    align-self: center;
+    width: 70px;
+    height: 70px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 40px;
+    gap: 40px;
+}
+
+.buttons-container button {
+    appearance: none;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 10px;
+    width: clamp(90px, 20%, 100px);
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    background-color: #3f3f46;
+}
+
 
 .main-container {
     color: white;
@@ -171,11 +281,7 @@ h1 {
 }
 
 .announcement div {
-    /* width: 100px; */
-    height: auto;
     overflow: hidden;
-    /* white-space: nowrap; */
-    text-overflow: ellipsis;
 }
 
 .announcement {
